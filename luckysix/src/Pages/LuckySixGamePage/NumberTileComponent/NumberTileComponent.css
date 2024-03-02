@@ -1,0 +1,18 @@
+.tile-number{
+    background-color: #222e35;
+    width: 50px;
+    justify-content: center;
+    display: flex;
+    border-radius: 50%;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.number-tile-component{
+    margin: 10px;
+}
+
+.multiplier-tab{
+    align-items: center;
+    display: flex;
+}

@@ -1,10 +1,11 @@
 import React from "react";
+import LuckySixGamePage from "../LuckySixGamePage/LuckySixGamePage";
+import jsonData from '../../assets/data/Numbers.json';
 
 function GamePage(){
     return(
         <div>
-            <h1>Game page</h1>
-            <h2>This is my first site</h2>
+            <LuckySixGamePage data={jsonData}/>
         </div>
     )
 }
