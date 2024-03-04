@@ -3,8 +3,8 @@ import NumberTileComponent from "./NumberTileComponent/NumberTileComponent";
 import NumberCircle from "./NumberCircle/NumberCircle";
 
 function LuckySixGamePage(props){
-
-    const[data, setData] = useState(props.data)
+    const[data, setData] = useState(props.data);
+    console.log(data);
 
     return(
         <div className="text-white">
