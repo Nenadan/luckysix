@@ -13,6 +13,7 @@
 
 .number-circle-selected{
     color: white;
+    opacity: 75%;
 }
 
 .number-value:hover{
