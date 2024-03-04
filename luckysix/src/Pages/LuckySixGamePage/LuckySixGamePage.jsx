@@ -9,8 +9,8 @@ function LuckySixGamePage(props){
     return(
         <div className="text-white">
             <h1>Lucky six game page</h1>
-            {data.map(number => (
-                <NumberCircle number={number.value} color={number.color}/>
+            {data.map((number, index) => (
+                <NumberCircle key={index} number={number.value} color={number.color}/>
             ))}
             
             <NumberTileComponent number={48} multiplier={10000} color="red"/>

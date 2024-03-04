@@ -17,8 +17,8 @@ function NumberCircle(props){
     }
 
     return(
-        <div onClick={CircleClicked} className={className} style={{border: `3px solid ${props.color}`}}>
-            <h3>{number}</h3>
+        <div onClick={CircleClicked} className={className} style={{border: `3px solid ${props.color}`, backgroundColor: isSeleted ? props.color : `rgba(34, 46, 53, 0.3)` }}>
+            <h3 className="number-value" style={{color: isSeleted ? "black" : `rgba(255, 255, 255, 0.3)` }}>{number}</h3>
         </div>
     )
 }
