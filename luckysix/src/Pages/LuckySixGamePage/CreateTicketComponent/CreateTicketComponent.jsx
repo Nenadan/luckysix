@@ -9,11 +9,12 @@ export default function CreateTicketComponent(props){
             <div className="selected-numbers">
                 {
                     props.selectedNumbers.map((number, index)=>(
-                        <h1 key={index}>{number}</h1>
+                        <h1 key={index} style={{color: number.color}}>{number.number}</h1>
                     ))
                 }
             </div>
-            <button className="btn btn-primary">Add combination</button>
+            <input className="form-control" type="number" placeholder="Insert amount"></input>
+            <button disabled={!props.ticketCompleted} className="btn btn-primary">Add combination</button>
         </div>
     )
 }

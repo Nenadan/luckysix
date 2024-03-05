@@ -5,14 +5,14 @@ import CreateTicketComponent from "./CreateTicketComponent/CreateTicketComponent
 function LuckySixGamePage(props){
     const[data, setData] = useState(props.data);
     const[selectedNumbers, setSelectedNumbers] = useState([]);
+    let ticketCompleted = selectedNumbers.length >= 6 ? true : false;
 
     function AddRemoveNumbers(isSeleted, number){
         if(isSeleted){
             setSelectedNumbers(prevSelectedNumbers => [...prevSelectedNumbers, number]);
         }else{
-            setSelectedNumbers(prevSelectedNumbers => prevSelectedNumbers.filter(item => item !== number));
+            setSelectedNumbers(prevSelectedNumbers => prevSelectedNumbers.filter(item => item.number !== number.number));
         }
-        console.log(selectedNumbers);
     }
     return(
         <div className="text-white">
@@ -22,7 +22,9 @@ function LuckySixGamePage(props){
                     <NumberCircle key={index} number={number.value} color={number.color} clickmethod={AddRemoveNumbers}/>
                 ))}
             </div>
-            <CreateTicketComponent selectedNumbers={selectedNumbers}/>     
+            <div className="create-ticket-container">
+                <CreateTicketComponent ticketCompleted={ticketCompleted} selectedNumbers={selectedNumbers}/>   
+            </div>  
         </div>
     )
 }

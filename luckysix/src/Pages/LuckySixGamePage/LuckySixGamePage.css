@@ -4,3 +4,9 @@
     grid-column-gap: 20px;
     grid-row-gap: 40px;
   }
+
+  .create-ticket-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }

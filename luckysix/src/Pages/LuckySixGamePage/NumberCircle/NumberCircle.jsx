@@ -13,7 +13,7 @@ function NumberCircle(props){
 
     useEffect(() => {
         console.log(isSeleted); // Log the updated value of isSeleted
-        props.clickmethod(isSeleted, number)
+        props.clickmethod(isSeleted, props)
         if(isSeleted){
             setClassName("number-circle number-circle-selected");
         }else{
