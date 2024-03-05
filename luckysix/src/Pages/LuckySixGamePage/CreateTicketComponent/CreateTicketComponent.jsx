@@ -5,9 +5,10 @@ export default function CreateTicketComponent(props){
     const[amount, setAmount] = useState(null);
 
     function AddCombination(){
+        let sortedNumbers = [...props.selectedNumbers].sort((a, b) => a.number - b.number);
         let newCombination = {
             id: '00000001',
-            numbers: props.selectedNumbers,
+            numbers: sortedNumbers,
             amount: amount
         };
         console.log(newCombination);
