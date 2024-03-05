@@ -11,7 +11,6 @@ export default function CreateTicketComponent(props){
             numbers: sortedNumbers,
             amount: amount
         };
-        console.log(newCombination);
         props.setCombination(newCombination);
     }
     return(
