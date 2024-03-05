@@ -10,3 +10,16 @@
     justify-content: center;
     margin-top: 20px;
   }
+
+  .lucky-six-game-page{
+    display: flex;
+  }
+
+  .game-container{
+    flex: 6;
+  }
+
+  .tickets-container{
+    flex: 1;
+    height: 100vh;
+  }

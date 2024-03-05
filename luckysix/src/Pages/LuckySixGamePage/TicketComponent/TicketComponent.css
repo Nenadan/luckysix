@@ -1,0 +1,15 @@
+.active-ticket{
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    padding: 5px;
+    margin: 10px;
+}
+
+.active-ticket-info{
+    display: flex;
+    justify-content: space-between;
+}
+
+.ticket-id-label{
+    margin-bottom: 0;
+}

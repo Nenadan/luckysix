@@ -14,7 +14,7 @@ export default function CreateTicketComponent(props){
                 }
             </div>
             <input className="form-control" type="number" placeholder="Insert amount"></input>
-            <button disabled={!props.ticketCompleted} className="btn btn-primary">Add combination</button>
+            <button disabled={!props.ticketCompleted} className="btn btn-primary mt-2">Add combination</button>
         </div>
     )
 }
