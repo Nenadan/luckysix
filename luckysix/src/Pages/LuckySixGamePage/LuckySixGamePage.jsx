@@ -6,6 +6,8 @@ import TicketsComponent from "./TicketsComponent/TicketsComponent";
 function LuckySixGamePage(props){
     const[data, setData] = useState(props.data);
     const[selectedNumbers, setSelectedNumbers] = useState([]);
+    const[combinations, setCombinations] = useState([]);
+
     let ticketCompleted = selectedNumbers.length >= 6 ? true : false;
 
     function AddRemoveNumbers(isSeleted, number){
@@ -14,6 +16,11 @@ function LuckySixGamePage(props){
         }else{
             setSelectedNumbers(prevSelectedNumbers => prevSelectedNumbers.filter(item => item.number !== number.number));
         }
+    }
+
+    function setCombination(combination){
+        setSelectedNumbers([]);
+        setCombinations(previousCombinations => [...previousCombinations, combination]);
     }
     return(
         <div className="lucky-six-game-page text-white">
@@ -25,12 +32,17 @@ function LuckySixGamePage(props){
                     ))}
                 </div>
                 <div className="create-ticket-container">
-                    <CreateTicketComponent ticketCompleted={ticketCompleted} selectedNumbers={selectedNumbers}/>   
+                    <CreateTicketComponent ticketCompleted={ticketCompleted} selectedNumbers={selectedNumbers} setCombination={setCombination}/>   
                 </div>
             </div>
-            <div className="tickets-container">
-                <TicketsComponent />
-            </div>  
+            {
+            combinations.length > 0 ? 
+            (<div className="tickets-container">
+                <TicketsComponent combinations={combinations}/>
+            </div>)
+            : null
+            }
+  
         </div>
     )
 }

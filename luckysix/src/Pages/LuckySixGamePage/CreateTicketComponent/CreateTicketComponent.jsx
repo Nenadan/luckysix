@@ -1,8 +1,18 @@
-import react from "react";
+import react, { useState } from "react";
 import '../CreateTicketComponent/CreateTicketComponent.css'
 
 export default function CreateTicketComponent(props){
+    const[amount, setAmount] = useState(null);
 
+    function AddCombination(){
+        let newCombination = {
+            id: '00000001',
+            numbers: props.selectedNumbers,
+            amount: amount
+        };
+        console.log(newCombination);
+        props.setCombination(newCombination);
+    }
     return(
         <div className="create-ticket-component">
             <h3>Create ticket</h3>
@@ -13,8 +23,8 @@ export default function CreateTicketComponent(props){
                     ))
                 }
             </div>
-            <input className="form-control" type="number" placeholder="Insert amount"></input>
-            <button disabled={!props.ticketCompleted} className="btn btn-primary mt-2">Add combination</button>
+            <input onChange={(e) => setAmount(e.target.value)} className="form-control" type="number" placeholder="Insert amount"></input>
+            <button onClick={AddCombination} disabled={!props.ticketCompleted} className="btn btn-primary mt-2">Add combination</button>
         </div>
     )
 }

@@ -1,12 +1,15 @@
 import React from "react";
 import TicketComponent from "../TicketComponent/TicketComponent";
 
-let TicketsComponent = () => {
+let TicketsComponent = (props) => {
 
     return(
         <div>
-            <h2>Tickets component</h2>
-            <TicketComponent />
+            {
+                props.combinations.map((combination, index) => (
+                    <TicketComponent key={index} combination={combination}/>
+                ))
+            }
         </div>
     )
 }
